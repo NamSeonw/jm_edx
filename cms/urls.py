@@ -175,6 +175,9 @@ urlpatterns = [
     url(r'^api/val/v0/', include('edxval.urls')),
     url(r'^api/tasks/v0/', include('user_tasks.urls')),
     url(r'^accessibility$', contentstore.views.accessibility, name='accessibility'),
+
+    # cms api
+    url(r'^custom_cms_api/', include('custom_cms_api.urls')),
 ]
 
 if not settings.DISABLE_DEPRECATED_SIGNIN_URL:

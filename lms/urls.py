@@ -55,6 +55,7 @@ from staticbook import views as staticbook_views
 from student import views as student_views
 from util import views as util_views
 
+
 RESET_COURSE_DEADLINES_NAME = 'reset_course_deadlines'
 RENDER_XBLOCK_NAME = 'render_xblock'
 COURSE_DATES_NAME = 'dates'
@@ -172,6 +173,9 @@ urlpatterns = [
     url(r'^api/experiments/', include(('experiments.urls', 'lms.djangoapps.experiments'), namespace='api_experiments')),
     url(r'^api/discounts/', include(('openedx.features.discounts.urls', 'openedx.features.discounts'),
                                     namespace='api_discounts')),
+
+    # lms api
+    url(r'^custom_lms_api/', include('custom_lms_api.urls')),
 ]
 
 if settings.FEATURES.get('ENABLE_MOBILE_REST_API'):

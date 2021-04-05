@@ -193,6 +193,13 @@ class CourseDetails(object):
 
         dirty = False
 
+        ###### BUG FIX ######
+        # descriptor.static_asset_path = image_dir_string
+        # descriptor.course_image = image_dir_string
+        # descriptor.banner_image = image_dir_string
+        # descriptor.video_thumbnail_image = image_dir_string
+        ###### BUG FIX ######
+
         # In the descriptor's setter, the date is converted to JSON
         # using Date's to_json method. Calling to_json on something that
         # is already JSON doesn't work. Since reaching directly into the
